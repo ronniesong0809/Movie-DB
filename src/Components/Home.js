@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {Hero} from './Hero';
 
 export const Home = () =>  {
     const [movies, setMovies] = useState([])
@@ -13,15 +14,17 @@ export const Home = () =>  {
             .then(res => res.json())
             .then(res => {
                 setMovies([...movies, ...res.results])
-                setHeroImage(heroImage || res.results[0])
+                setHeroImage(heroImage || [res.results[0], res.results[1], res.results[2]])
             });
     };
 
     return (
         <div>
+            <Hero heroImage={heroImage} />
             {movies.map((e, k) =>
                 <li key={k}>
                     {e.original_title}
+                    {e.backdrop_path}
                 </li>
             )}
         </div>
