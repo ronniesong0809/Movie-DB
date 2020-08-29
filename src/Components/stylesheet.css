@@ -1,0 +1,18 @@
+.header {
+    background: #1c1c1c;
+}
+
+.svgShadow {
+    filter: drop-shadow( 10px 10px 1px rgba(0,0,0,0.8));
+    margin-right: 10px;
+}
+
+.textShadow {
+    text-shadow: 10px 10px 2px rgba(0,0,0,0.8);
+}
+
+.title {
+    font-size: 2em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-right: 10px;
+}
