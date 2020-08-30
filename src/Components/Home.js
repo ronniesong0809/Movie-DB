@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import {Hero} from './Hero';
 import {SearchBar} from './SearchBar';
-import { Button, Spinner } from "react-bootstrap";
+import {Movie} from './Movie'
+import { Button, Spinner, CardDeck } from "react-bootstrap";
 
 export const Home = () =>  {
     const [loading, setLoading] = useState(false)
@@ -60,17 +61,24 @@ export const Home = () =>  {
         <div>
             <Hero heroImage={backdrop} />
             <SearchBar callback={searchMovies}/>
-            {!search ? <h1>Popular Movies</h1> : <h1>Search Result</h1>}
-            {movies && movies.map((e, k) =>
-                <li key={k}>
-                    {e.original_title}
-                    {e.backdrop_path}
-                </li>
-            )}
-            {loading ? <Spinner animation="border" /> : null}
+            {!search ? <h1 className="textShadow whiteText">Popular Movies</h1> : <h1 className="textShadow whiteText">Search Result</h1>}
+            <div className="cardDeck" bsPrefix>
+                {movies && movies.map((e, k) =>
+                    <Movie key={k} Movie={e}/>
+                )}
+            </div>
+            {!loading ? (
+                <span className="justify-content-center spinner">
+                    <Spinner animation="border" />
+                    <Spinner animation="border" />
+                    <Spinner animation="border" />
+                    <Spinner animation="border" />
+                    <Spinner animation="border" />
+                </span>
+            ) : null}
             {page <= pages && !loading ? (
-                <div className="p-5">
-                    <Button variant="dark" size="lg" block onClick={loadMoreItems}>{loading ? 'Loading…' : 'Click to load more'}</Button>
+                <div className="p-5 svgShadow">
+                    <Button variant="light" size="lg" block onClick={loadMoreItems}>{loading ? 'Loading…' : 'Click to load more'}</Button>
                 </div>
             ) : null}
         </div>
