@@ -13,8 +13,8 @@ export const Hero = (props) => {
         <div className="hero">
             <Carousel>
             {heroImage ? (
-                heroImage.map(element => 
-                    <Carousel.Item>
+                heroImage.map((element, key) => 
+                    <Carousel.Item key={key}>
                         <img alt="hero" className="d-block w-10"
                             src={`https://image.tmdb.org/t/p/w1280/${element.backdrop_path}`}
                         />
