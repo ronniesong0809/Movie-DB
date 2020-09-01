@@ -10,7 +10,7 @@ const Header = () => {
             <span className="title textShadow">MovieDB</span>
         </Navbar.Brand>
         <Nav className="mr-auto">
-            <Nav.Link href="#home" className="textShadow">Home</Nav.Link>
+            <Nav.Link href="/" className="textShadow">Home</Nav.Link>
         </Nav>
         <Nav.Link href="https://www.themoviedb.org" rel="noopener noreferrer" target="_blank">
             <img alt="source" src="/images/tmdb.svg" width="70" className="svgShadow d-inline-block align-top" />
