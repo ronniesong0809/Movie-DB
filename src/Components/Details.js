@@ -27,45 +27,50 @@ export const Details = (props) =>  {
     }, [props.match.params.movieId])
 
     return (
+        
         <div>
-            <img className="details-backdrop" alt={movie.backdrop_path} src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`} />
-            <div className="details-text">
-                <Media>
-                    <img
-                        className="media-image mr-3"
-                        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                        alt={movie.poster_path}
-                    />
-                    <Media.Body className="textShadowSmall">
-                        <h1>{movie.title} ({moment(movie.release_date).format("YYYY")})</h1>
-                        <span className="grayText">
-                            {moment(movie.release_date).format("MM/DD/YYYY")}
-                            {movie.genres && movie.genres.map(element => 
-                                <span> • {element.name}</span>
-                            )} • {Math.floor(movie.runtime/60)}h {movie.runtime%60}m
-                        </span><br/>
-                        <OverlayTrigger placement="right"
-                            overlay={<Tooltip className="svgShadow">{movie.vote_average*10}% User Score</Tooltip>}>
-                            <span>
-                                <Rating
-                                    emptySymbol={<FontAwesomeIcon color="gray" icon={faTicketAlt}/>}
-                                    fullSymbol={<FontAwesomeIcon color="red" icon={faTicketAlt}/>}
-                                    placeholderSymbol={<FontAwesomeIcon color="orange" icon={faTicketAlt}/>}
-                                    placeholderRating={movie.vote_average/2}
-                                    readonly
-                                />
-                            </span>
-                        </OverlayTrigger>
-                        <p>
-                            {movie.tagline}
-                        </p>
-                        <h3>Overview</h3>
-                        <p>
-                            {movie.overview}
-                        </p>
-                    </Media.Body>
-                </Media>
+            {movie.title && (
+            <div>
+                <img className="details-backdrop" alt={movie.backdrop_path} src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`} />
+                <div className="details-text">
+                    <Media>
+                        <img
+                            className="media-image mr-3"
+                            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                            alt={movie.poster_path}
+                        />
+                        <Media.Body className="textShadowSmall">
+                            <h1>{movie.title} ({moment(movie.release_date).format("YYYY")})</h1>
+                            <span className="grayText">
+                                {moment(movie.release_date).format("MM/DD/YYYY")}
+                                {movie.genres && movie.genres.map((element, key) => 
+                                    <span key={key}> • {element.name}</span>
+                                )} • {Math.floor(movie.runtime/60)}h {movie.runtime%60}m
+                            </span><br/>
+                            <OverlayTrigger placement="right"
+                                overlay={<Tooltip className="svgShadow">{movie.vote_average*10}% User Score</Tooltip>}>
+                                <span>
+                                    <Rating
+                                        emptySymbol={<FontAwesomeIcon color="gray" icon={faTicketAlt}/>}
+                                        fullSymbol={<FontAwesomeIcon color="red" icon={faTicketAlt}/>}
+                                        placeholderSymbol={<FontAwesomeIcon color="orange" icon={faTicketAlt}/>}
+                                        placeholderRating={movie.vote_average/2}
+                                        readonly
+                                    />
+                                </span>
+                            </OverlayTrigger> <small>from {movie.vote_count} Ratings</small>
+                            <p>
+                                {movie.tagline}
+                            </p>
+                            <h3>Overview</h3>
+                            <p>
+                                {movie.overview}
+                            </p>
+                        </Media.Body>
+                    </Media>
+                </div>
             </div>
+            )}
         </div>
     )
 }
