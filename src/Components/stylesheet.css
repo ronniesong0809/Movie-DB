@@ -2,6 +2,12 @@ body {
     background-color: #1c1c1c !important;
 }
 
+hr {
+    width: 60%;
+    border-top: 1px solid #ccc !important;
+    filter: drop-shadow(8px 8px 1px rgb(0, 0, 0));
+}
+
 .header {
     background: #1c1c1c;
 }
@@ -51,6 +57,22 @@ body {
     height: 600px;
     object-fit: cover;
     position: relative;
+}
+
+.searchBar {
+    width: 60%;
+    margin: auto;
+    padding: 30px;
+    /* position: absolute;
+    z-index: 1;
+    top: 5%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); */
+}
+
+.input-group-lg>.form-control {
+    height: 70px !important;
 }
 
 .cardDeck {

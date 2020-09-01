@@ -16,7 +16,7 @@ export const SearchBar = (props) => {
     }
 
     return (
-        <div className="p-4 header">
+        <div className="searchBar">
             <InputGroup size="lg" className="svgShadow">
             <InputGroup.Prepend>
                 <OverlayTrigger placement="top"

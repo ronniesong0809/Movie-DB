@@ -21,7 +21,7 @@ export const Home = () =>  {
                     setNotFound(true)
                 }else{
                     setMovies([...movies, ...res.results])
-                    setBackdrop(backdrop || [res.results[0], res.results[1], res.results[2]])
+                    setBackdrop(backdrop || [res.results[0], res.results[1], res.results[2], res.results[3], res.results[4]])
                     setLoading(false)
                     setPage(res.page)
                     setPages(res.total_pages)
@@ -69,13 +69,8 @@ export const Home = () =>  {
             <SearchBar callback={searchMovies}/>
             {!notFound ? (
                 !search ? <h1 className="textShadow whiteText">Popular Movies</h1> : <h1 className="textShadow whiteText">Search Result</h1>
-            ) : <h1 className="textShadow whiteText">Not Found</h1>}
+            ) : <h1 className="textShadow whiteText">Not Found</h1>} <hr/>
 
-            <div className="cardDeck p-5">
-                {movies && movies.map((e, k) =>
-                    <Movie key={k} Movie={e}/>
-                )}
-            </div>
             {loading ? (
                 <span className="justify-content-center spinner svgShadow my-5">
                     <Spinner className="mx-2" animation="border" />
@@ -85,6 +80,13 @@ export const Home = () =>  {
                     <Spinner className="mx-2" animation="border" />
                 </span>
             ) : null}
+
+            <div className="cardDeck pb-5 px-5">
+                {movies && movies.map((e, k) =>
+                    <Movie key={k} Movie={e}/>
+                )}
+            </div>
+
             {page <= pages && !loading ? (
                 <div className="p-5 svgShadow">
                     <Button variant="light" size="lg" block onClick={loadMoreItems}>{loading ? 'Loading…' : 'Click to load more'}</Button>
