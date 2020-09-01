@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import {Hero} from './Hero';
 import {SearchBar} from './SearchBar';
 import {Movie} from './Movie'
-import { Button, Spinner, CardDeck } from "react-bootstrap";
+import { Button, Spinner } from "react-bootstrap";
 
 export const Home = () =>  {
     const [loading, setLoading] = useState(false)

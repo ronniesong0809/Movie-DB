@@ -47,7 +47,7 @@ export const Movie = (props) => {
                     </Card.Body>
                     <Card.Footer className="d-flex">
                         <time className="m-2 grayText" title={moment(movie.release_date).format("LLLL")}>{moment(movie.release_date).fromNow()}</time>
-                        <Button className="ml-auto" variant="primary">Read More</Button>
+                        <Button className="ml-auto" variant="primary" href={`/${movie.id}`}>Read More</Button>
                     </Card.Footer>
                 </Card>
             ) : null}
