@@ -25,22 +25,18 @@ body {
 
 .whiteText {
     text-align: center;
-    color: aliceblue;
+    color: white;
+}
+
+.grayText {
+    font-size: small;
+    color: gray;
 }
 
 .title {
     font-size: 2em;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     margin-right: 10px;
-}
-
-.x {
-    background-size: 100%, cover !important;
-    background-position: center, center !important;
-    width: 100%;
-    height: 600px;
-    position: relative;
-    animation: animateHeroimage 1s;
 }
 
 .hero {
@@ -59,7 +55,11 @@ body {
 
 .cardDeck {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)) !important;
+}
+
+.card-body {
+    height: 200px;
 }
 
 .card-text {
@@ -72,7 +72,7 @@ body {
 }
 
 .spinner {
-    color: aliceblue;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;

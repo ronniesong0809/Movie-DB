@@ -71,7 +71,7 @@ export const Home = () =>  {
                 !search ? <h1 className="textShadow whiteText">Popular Movies</h1> : <h1 className="textShadow whiteText">Search Result</h1>
             ) : <h1 className="textShadow whiteText">Not Found</h1>}
 
-            <div className="cardDeck" bsPrefix>
+            <div className="cardDeck p-5">
                 {movies && movies.map((e, k) =>
                     <Movie key={k} Movie={e}/>
                 )}

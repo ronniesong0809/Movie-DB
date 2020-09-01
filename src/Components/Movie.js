@@ -1,6 +1,10 @@
 import React, {useState, useEffect} from "react";
 import "./stylesheet.css";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, OverlayTrigger, Tooltip } from "react-bootstrap";
+import Rating from "react-rating";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTicketAlt } from "@fortawesome/free-solid-svg-icons";
+import moment from "moment";
 
 export const Movie = (props) => {
     const [movie, setMovie] = useState(null);
@@ -12,15 +16,39 @@ export const Movie = (props) => {
     return (
         <div className="">
             {movie ? (
-                <Card className="text-left m-3 movieShadow">
+                <Card className="card text-left m-3 movieShadow">
                     <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`} />
                     <Card.Body>
-                        <Card.Title>{movie.original_title}</Card.Title>
+                        <Card.Title>
+                            <OverlayTrigger placement="top"
+                                overlay={<Tooltip className="svgShadow">{movie.title}</Tooltip>}>
+                                <span>
+                                    {movie.original_title}
+                                </span>
+                            </OverlayTrigger>
+                        </Card.Title>
+                        <Card.Subtitle className="mb-2">
+                            <OverlayTrigger placement="right"
+                                overlay={<Tooltip className="svgShadow">{movie.vote_average*10}% User Score</Tooltip>}>
+                                <span>
+                                <Rating
+                                    emptySymbol={<FontAwesomeIcon color="gray" icon={faTicketAlt}/>}
+                                    fullSymbol={<FontAwesomeIcon color="red" icon={faTicketAlt}/>}
+                                    placeholderSymbol={<FontAwesomeIcon color="orange" icon={faTicketAlt}/>}
+                                    placeholderRating={movie.vote_average/2}
+                                    readonly
+                                />
+                                </span>
+                            </OverlayTrigger> <time className="grayText" title={moment(movie.release_date).format("LLLL")}>{moment(movie.release_date).format("LL")}</time>
+                        </Card.Subtitle>
                         <Card.Text>
                             {movie.overview}
                         </Card.Text>
-                        <Button variant="primary">Read More</Button>
                     </Card.Body>
+                    <Card.Footer className="d-flex">
+                        <time className="m-2 grayText" title={moment(movie.release_date).format("LLLL")}>{moment(movie.release_date).fromNow()}</time>
+                        <Button className="ml-auto" variant="primary">Read More</Button>
+                    </Card.Footer>
                 </Card>
             ) : null}
         </div>
