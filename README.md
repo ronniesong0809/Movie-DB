@@ -12,6 +12,7 @@ This is a simple Movie Database web app powered by TMDb to experiment with React
 Demo: [here](https://the-movie-db.vercel.app/)
 
 ## Tech Stack and Tools
+
 [TMDB API](https://www.themoviedb.org/documentation/api)
 
 yarn, create-react-app, Vercel, Netlify, react-bootstrap, react-router-dom, fontawesome, moment, react-rating
@@ -19,6 +20,7 @@ yarn, create-react-app, Vercel, Netlify, react-bootstrap, react-router-dom, font
 ## Setup
 
 Git clone, and install all modules/dependencies
+
 ```shells
 $ git clone https://github.com/ronniesong0809/movie-db.git
 $ cd movie-db
@@ -26,20 +28,25 @@ $ yarn install
 ```
 
 Run
+
 ```shell
 $ yarn start
 ```
+
 Go to: [localhost:3000/](http://localhost:3000/)
 
 ## Quick Start
+
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fronniesong0809%2Fmovie-db)
 
 ## Reference
- - React Hooks [Documentation](https://reactjs.org/docs/hooks-rules)
- - Components and Props [Documentation](https://reactjs.org/docs/components-and-props)
- - TMDB API [Documentation](https://www.themoviedb.org/documentation/api)
- - React Bootstrap [Documentation](https://react-bootstrap.github.io/components/alerts/)
- - [Working with JSON](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)
+
+- React Hooks [Documentation](https://reactjs.org/docs/hooks-rules)
+- Components and Props [Documentation](https://reactjs.org/docs/components-and-props)
+- TMDB API [Documentation](https://www.themoviedb.org/documentation/api)
+- React Bootstrap [Documentation](https://react-bootstrap.github.io/components/alerts/)
+- [Working with JSON](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)
 
 ## License
-This program is licensed under the "MIT License". Please see the file [`LICENSE`](https://github.com/ronniesong0809/movie-db/blob/master/LICENSE) in the  source distribution of this software for license terms.
+
+This program is licensed under the "MIT License". Please see the file [`LICENSE`](https://github.com/ronniesong0809/movie-db/blob/master/LICENSE) in the source distribution of this software for license terms.
