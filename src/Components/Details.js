@@ -31,17 +31,27 @@ export const Details = (props) =>  {
         <div>
             {movie.title && (
             <div>
-                <img className="details-backdrop" alt={movie.backdrop_path} src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`} />
+                {movie.backdrop_path && 
+                    <img className="details-backdrop" alt={movie.backdrop_path} src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`} />}
+                {!movie.backdrop_path && 
+                    <img className="details-backdrop" alt={movie.backdrop_path} src={process.env.PUBLIC_URL+"images/placeholder.png"} />}
                 <div className="details-text">
                     <Media>
-                        <img
-                            className="media-image mr-3"
-                            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                            alt={movie.poster_path}
-                        />
+                        {movie.poster_path && 
+                            <img
+                                className="media-image mr-3"
+                                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                                alt={movie.poster_path}
+                            />}
+                        {!movie.poster_path && 
+                            <img
+                                className="media-image mr-3"
+                                src={process.env.PUBLIC_URL+"images/placeholder.png"}
+                                alt={movie.poster_path}
+                            />}
                         <Media.Body className="textShadowSmall">
                             <h1>{movie.title} ({moment(movie.release_date).format("YYYY")})</h1>
-                            <span className="grayText">
+                            <span className="whiteText">
                                 {moment(movie.release_date).format("MM/DD/YYYY")}
                                 {movie.genres && movie.genres.map((element, key) => 
                                     <span key={key}> • {element.name}</span>

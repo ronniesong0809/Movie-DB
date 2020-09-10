@@ -81,7 +81,7 @@ export const Home = () =>  {
                 </span>
             ) : null}
 
-            <div className="cardDeck pb-5 px-5">
+            <div className="cardDeck pb-5">
                 {movies && movies.map((e, k) =>
                     <Movie key={k} Movie={e}/>
                 )}

@@ -36,7 +36,7 @@ hr {
 
 .grayText {
     font-size: small;
-    color: gray;
+    color: grey;
 }
 
 .title {
@@ -78,6 +78,12 @@ hr {
 .cardDeck {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)) !important;
+}
+
+.cardImage {
+    height: 250px;
+    object-fit: cover;
+    position: relative;
 }
 
 .card-body {
@@ -127,5 +133,19 @@ hr {
 @media only screen and (max-width: 600px) {
     .media-image {
         display: none;
+    }
+
+    .searchBar {
+        width: 100%;
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+    .cardDeck {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
     }
 }

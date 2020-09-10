@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from "react";
-import "./stylesheet.css";
 import { Card, Button, OverlayTrigger, Tooltip } from "react-bootstrap";
 import Rating from "react-rating";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTicketAlt } from "@fortawesome/free-solid-svg-icons";
 import moment from "moment";
+import "./stylesheet.css";
 
 export const Movie = (props) => {
     const [movie, setMovie] = useState(null);
@@ -17,7 +17,10 @@ export const Movie = (props) => {
         <div className="">
             {movie ? (
                 <Card className="card text-left m-3 movieShadow">
-                    <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`} />
+                    {movie.backdrop_path && 
+                        <Card.Img className="cardImage" variant="top" src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`} />}
+                    {!movie.backdrop_path && 
+                        <Card.Img className="cardImage" variant="top" src={process.env.PUBLIC_URL+"images/placeholder.png"} />}
                     <Card.Body>
                         <Card.Title>
                             <OverlayTrigger placement="top"
