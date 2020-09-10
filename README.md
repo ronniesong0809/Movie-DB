@@ -2,6 +2,7 @@
 
 [![Vercel Status](https://img.shields.io/badge/Vercel-Deployed-blue)](https://the-movie-db.vercel.app/)
 [![Netlify Status](https://img.shields.io/badge/Netlify-Success-1abc9c)](https://app.netlify.com/sites/themovie-db/deploys)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/ronniesong0809/movie-db/blob/master/LICENSE)
 [![contributions welcome](https://img.shields.io/badge/Contributions-welcome-brightgreen.svg?style=flat)](https://github.com/ronniesong0809/movie-db/issues/new)
 
