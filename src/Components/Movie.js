@@ -81,7 +81,11 @@ export const Movie = (props) => {
             >
               {moment(movie.release_date).fromNow()}
             </time>
-            <Button className="ml-auto" variant="primary" href={`/${movie.id}`}>
+            <Button
+              className="ml-auto"
+              variant="primary"
+              href={`/movie/${movie.id}`}
+            >
               Read More
             </Button>
           </Card.Footer>

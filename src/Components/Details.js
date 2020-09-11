@@ -4,7 +4,7 @@ import moment from "moment";
 import Rating from "react-rating";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTicketAlt } from "@fortawesome/free-solid-svg-icons";
-import { DiscussionEmbed } from 'disqus-react';
+import { DiscussionEmbed } from "disqus-react";
 
 export const Details = (props) => {
   const [movie, setMovie] = useState([]);
@@ -88,20 +88,16 @@ export const Details = (props) => {
                 <p>{movie.tagline}</p>
                 <h3>Overview</h3>
                 <p>{movie.overview}</p>
-                
               </Media.Body>
             </Media>
             <DiscussionEmbed
               className="Disqus"
-              shortname='the-movie-db'
-              config={
-                  {
-                      url: "https://the-movie-db.vercel.app/" + movie.id,
-                      identifier: movie.id,
-                      title: movie.title,
-                      language: 'en_US'
-                  }
-                }
+              shortname="the-movie-db"
+              config={{
+                url: "https://the-movie-db.vercel.app/movie/" + movie.id,
+                identifier: "" + movie.id,
+                title: movie.title,
+              }}
             />
           </div>
           {movie.backdrop_path && (

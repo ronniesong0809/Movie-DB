@@ -14,7 +14,10 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         {/* <Route path="/:movieId" component={Details} /> */}
-        <Route path="/:movieId" render={(props) => <Details {...props} />} />
+        <Route
+          path="/movie/:movieId"
+          render={(props) => <Details {...props} />}
+        />
         <Route component={notFound} />
       </Switch>
       <Footer />
