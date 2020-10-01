@@ -114,7 +114,7 @@ export const Details = (props) => {
               {recommendedItem.data && recommendedItem.data.map((e, k) =>
                 <Card className="card blackText text-left m-3 movieShadow" key={k} id={e._id}>
                   <Card.Img
-                    className="cardImage"
+                    className="cardImage-rec"
                     variant="top"
                     src={`https://image.tmdb.org/t/p/w500/${e.backdrop}`}
                   />

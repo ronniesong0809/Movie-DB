@@ -89,6 +89,13 @@ hr {
 }
 
 .cardImage {
+  height: 250px;
+  object-fit: cover;
+  position: relative;
+}
+
+
+.cardImage-rec {
   height: 150px;
   object-fit: cover;
   position: relative;
