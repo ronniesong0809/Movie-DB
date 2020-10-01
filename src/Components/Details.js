@@ -109,44 +109,46 @@ export const Details = (props) => {
               </Media.Body>
             </Media>
 
-            <h4 className="mt-5 mx-3">Best Similar Movies Recommendation:</h4>
-            <div className="cardDeck-rec pb-5">
-              {recommendedItem.data && recommendedItem.data.map((e, k) =>
-                <Card className="card blackText text-left m-3 movieShadow" key={k} id={e._id}>
-                  <Card.Img
-                    className="cardImage-rec"
-                    variant="top"
-                    src={`https://image.tmdb.org/t/p/w500/${e.backdrop}`}
-                  />
-                  <Card.Body>
-                    <Card.Title>
-                      <span className="card-title-rec">
-                        {e.name}
-                      </span>
+            {recommendedItem.data && 
+              <h4 className="mt-5 mx-3">Best Similar Movies Recommendation:</h4>
+              <div className="cardDeck-rec pb-5">
+                recommendedItem.data.map((e, k) =>
+                  <Card className="card blackText text-left m-3 movieShadow" key={k} id={e._id}>
+                    <Card.Img
+                      className="cardImage-rec"
+                      variant="top"
+                      src={`https://image.tmdb.org/t/p/w500/${e.backdrop}`}
+                    />
+                    <Card.Body>
+                      <Card.Title>
+                        <span className="card-title-rec">
+                          {e.name}
+                        </span>
+                        <span className="grayText">
+                          {moment(e.date).format("MM/DD/YYYY")} • {e.genre}
+                        </span>
+                      </Card.Title>
+                      <Card.Text className="card-text-rec">
+                        {e.description}
+                      </Card.Text>
+                    </Card.Body>
+                    <Card.Footer className="d-flex">
                       <span className="grayText">
-                        {moment(e.date).format("MM/DD/YYYY")} • {e.genre}
+                        Cosine Similarity:<br/> 
+                        {e.score}
                       </span>
-                    </Card.Title>
-                    <Card.Text className="card-text-rec">
-                      {e.description}
-                    </Card.Text>
-                  </Card.Body>
-                  <Card.Footer className="d-flex">
-                    <span className="grayText">
-                      Similar Score:<br/> 
-                      {e.score}
-                    </span>
-                    <Button
-                      className="ml-auto"
-                      variant="primary"
-                      href={e.link}
-                    >
-                      Read More
-                    </Button>
-                  </Card.Footer>
-                </Card>
-              )}
-            </div>
+                      <Button
+                        className="ml-auto"
+                        variant="primary"
+                        href={e.link}
+                      >
+                        Read More
+                      </Button>
+                    </Card.Footer>
+                  </Card>
+                )
+              </div>
+            }
 
             <DiscussionEmbed
               className="Disqus"
