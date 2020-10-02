@@ -30,9 +30,9 @@ export const Details = (props) => {
     };
 
     const id = props.match.params.movieId;
-    const cors = 'https://unblock-cors.herokuapp.com/'
+    const cors = 'https://unblock-cors.herokuapp.com'
     const url = `https://api.themoviedb.org/3/movie/${id}?api_key=6ffcd9d2ee08895aa6f5701e5362196b&language=en-US&page=1`;
-    const url_rec = `${cors}http://movie-db-recsys.ronsong.me/movie?id=${id}&num=8`
+    const url_rec = `${cors}/${process.env.REACT_APP_RECSYS}/movie?id=${id}&num=8`
     const config = {
       headers: {
         "accept": "application/json",
